@@ -31,7 +31,7 @@ public class GunPositionData {
 
   @Override
   public String toString() {
-    return "DeviceOrientationData{" +
+    return "GunPositionData{" +
             "rotateDegrees=" + rotateDegrees +
             ", leftToRight=" + leftToRight +
             ", frontToBack=" + frontToBack +
