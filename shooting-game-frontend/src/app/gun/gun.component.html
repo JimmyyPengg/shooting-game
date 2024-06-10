@@ -1,3 +1,2 @@
-<p>frontToBack(x轴): {{roundUp(rawOrientationEvent?.beta)}}</p>
-<p>leftToRight(y轴): {{roundUp(rawOrientationEvent?.gamma)}}</p>
-<p>rotateDegrees(z轴): {{roundUp(rawOrientationEvent?.alpha)}}</p>
+<button class="change-scale-btn" (touchstart)="zoomIn()" (touchend)="zoomOut()"></button>
+<button class="trigger" (touchstart)="trigger()"></button>

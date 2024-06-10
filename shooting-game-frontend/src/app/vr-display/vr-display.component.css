@@ -48,28 +48,81 @@
     position: absolute;
     z-index: 100;
     left: 45%;
-    top: 25%;
+    top: 50%;
     width: 150px;
     height: 350px;
     transform-style: preserve-3d;
     transform: perspective(600px) rotateX(0deg) rotateY(-78deg) rotateZ(-78deg);
 }
 
-#bullet {
-    display: none;
+#bullet-horizontal, #bullet-vertical {
+     /* display: none; */
+    border-radius: 30%;
+    background-color: rgb(241, 138, 54);
     width: 20px;
     height: 50px;
-    border-radius: 30%;
-    background-color: red;
-    transform: translateY(0px);
+    position: absolute;
+    right: 30px;
     animation-duration: 0.2s;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* #bullet > .left, .right, .up, .down, .bottom {
+#bullet-horizontal {
+    transform: rotateY(90deg);
+}
 
-} */
+#bullet-vertical {
+    transform: rotateY(0deg);
+}
+
+#front-sight {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 0px;
+    margin: auto;
+    transform: rotateX(90deg) translateZ(1800px);
+}
+
+#front-sight > .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #000000;
+    position: absolute;
+}
+
+#front-sight > .left, #front-sight > .right, #front-sight > .up, #front-sight > .down {
+    position: absolute;
+    background-color: #000000;
+}
+
+#front-sight > .left {
+    width: 50px;
+    height: 10px;
+    margin-left: -20px;
+    margin-top: 50px;
+}
+
+#front-sight > .right {
+    width: 50px;
+    height: 10px;
+    margin-left: 85px;
+    margin-top: 50px;
+}
+
+#front-sight > .up {
+    width: 15px;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 80px;
+}
+
+#front-sight > .down {
+    width: 15px;
+    height: 50px;
+    margin-top: -20px;
+    margin-left: 50px;
+}
 
 #zoom-in-sight {
     display: none;
@@ -237,21 +290,7 @@
     height: 100%;
 }
 
-.balloon {
-    position: absolute;
-}
-
-.balloon > img {
-    height: 130px;
-}
-
-@keyframes fire {
-    0% {background-color: #000000;}
-    50% {background-color: red;}
-    100% {background-color: #000000;}
-}
-
 @keyframes fire-bullet {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-1800px); }
+    0% { margin-top: 0px; }
+    100% { margin-top: -1800px; }
 }

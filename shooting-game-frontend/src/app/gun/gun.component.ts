@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { OrientationData } from '../models/orientation-data';
 import { WebsocketService } from '../services/websocket.service';
 import { RxStomp } from '@stomp/rx-stomp';
+import { RequestService } from '../services/request.service';
+import { LbResponse } from '../models/lb-response';
+import { ScaleType } from '../models/scale-type';
 
 @Component({
   selector: 'gun',
@@ -15,7 +18,7 @@ export class GunComponent implements OnInit {
   private ws: RxStomp;
   private previousOrientationData: OrientationData = new OrientationData();
 
-  constructor(private websocketService: WebsocketService) {
+  constructor(private websocketService: WebsocketService, private requestService: RequestService) {
     this.ws = this.websocketService.createWebsocket();
   }
   
@@ -65,5 +68,21 @@ export class GunComponent implements OnInit {
     }
     
     return num;
+  }
+
+  trigger() {
+    this.requestService.pullTrigger().subscribe((response: LbResponse) => {});
+  }
+  
+  zoomIn() {
+    this.changeScale(ScaleType.ZOOM_IN);
+  }
+
+  zoomOut() {
+    this.changeScale(ScaleType.ZOOM_OUT);
+  }
+
+  private changeScale(scaleType: ScaleType) {
+    this.requestService.changeScale(scaleType).subscribe((response: LbResponse) => {});
   }
 }

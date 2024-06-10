@@ -1,0 +1,82 @@
+.grass-left, .grass-right, .grass-bottom {
+    position: absolute;
+    animation-duration: 0.2s;
+    z-index: 20;
+}
+
+.far > .grass-left, .far > .grass-right, .far > .grass-bottom {
+    width: 100px;
+}
+
+.cover {
+    position: absolute;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 65px;
+    background: #47c43b;
+}
+
+.groundhog, .dead-groundhog {
+    position: absolute;
+    height: 100px;
+    margin-left: 70px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.far > .groundhog, .far > .dead-groundhog {
+    height: 50px;
+    margin-left: 30px;
+}
+
+.far > .cover {
+    height: 75px;
+    width: 50px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.groundhog {
+    margin-top: 65px;
+}
+
+.dead-groundhog {
+    display: none;
+}
+
+@keyframes grass-shaking-right {
+    0% {transform: translateX(3px);}
+    25% {transform: translateX(-3px);}
+    75% {transform: translateX(3px);}
+    100% {transform: translateX(0px);}
+}
+
+@keyframes grass-shaking-left {
+    0% {transform: translateX(-3px);}
+    25% {transform: translateX(3px);}
+    75% {transform: translateX(-3px);}
+    100% {transform: translateX(0px);}
+}
+
+@keyframes groundhog-appear {
+    0% {margin-top: 65px;}
+    100% {margin-top: 0px;}
+}
+
+@keyframes groundhog-hide {
+    0% {margin-top: 0px;}
+    100% {margin-top: 65px;}
+}
+
+@keyframes groundhog-dead-down {
+    0% {
+        transform-origin: bottom;
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform-origin: bottom;
+        transform: rotateX(90deg);
+    }
+}

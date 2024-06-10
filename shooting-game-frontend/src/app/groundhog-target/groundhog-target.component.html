@@ -1,0 +1,8 @@
+<div [id]="targetId" [ngClass]="{'far': isSmall}">
+    <div class="cover"></div>
+    <img [id]="targetId+'-groundhog'" class="groundhog" src="assets/groundhog.png"/>
+    <img [id]="targetId+'-dead-groundhog'" class="dead-groundhog" src="assets/dead-groundhog.png"/>
+    <img [id]="targetId+'-left'" class="grass-left" src="assets/grass-left.png"/>
+    <img [id]="targetId+'-right'" class="grass-right" src="assets/grass-right.png"/>
+    <img (click)="shoot()" class="grass-bottom" src="assets/grass-bottom.png"/>
+</div>

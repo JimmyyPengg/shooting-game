@@ -5,7 +5,7 @@ import { GunComponent } from './gun/gun.component';
 
 const routes: Routes = [
   { path: 'vr-display', component: VrDisplayComponent },
-  { path: 'device', component: GunComponent },
+  { path: 'gun', component: GunComponent },
   { path: '**', component: VrDisplayComponent }
 ];
 
